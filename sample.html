@@ -1,0 +1,27 @@
+<head>
+    <title>basic ajax webpage</title>
+
+
+</head>
+
+<body>
+
+    <h4 id="demo">Welcome</h4>
+    <button onclick="submit1()" type="submit">click</button>
+    <script type="text/javascript">
+
+        function submit1() {//atep1
+            var xhttp = new XMLHttpRequest();//step2-object declare
+            xhttp.onreadystatechange = function() {//dtep5-function to be call when the ready state property change
+                if (this.readyState == 4 && this.status == 200) {//step6-hold state of the xhttp request==0 and number of request==o
+                    document.getElementById("demo").innerHTML = this.responseText;//step7
+                }
+            }
+     xhttp.open("GET", "sample.json", true)//step3
+     xhttp.send()//step4
+        }
+
+    </script>
+</body>
+
+</html>
